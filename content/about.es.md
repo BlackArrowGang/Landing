@@ -1,16 +1,13 @@
 +++
 title = "Acerca de Nosotros"
-date = "2014-04-09"
+date = "2022-11-10"
 aliases = ["about-us","about-hugo"]
 [ author ]
   name = "Hugo Authors"
 +++
 
-Hugo is the **world’s fastest framework for building websites**. It is written in Go.
+Somos una organización de **desarrollo de software** en rápido crecimiento con sede en México. Nuestro equipo tiene la experiencia, el entusiasmo y la dedicación necesarios. Hemos ayudado a varias empresas a lograr **éxito** y un gran rendimiento.
 
-It makes use of a variety of open source projects including:
+Somos una organización fundada y dirigida por **Desarrolladores**.
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+Operamos como un equipo con una mentalidad ágil.
