@@ -134,8 +134,7 @@ img {
   }
   &.circle {
     border-radius: 50%;
-    // max-width: 25%;
-    max-width: 650px;
+    max-width: 70vh;
     margin: auto;
     
     @media (max-width: 900px) {
