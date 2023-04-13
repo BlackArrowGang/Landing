@@ -52,7 +52,7 @@ input[type=text], input[type=email] {
 }
 </style>
 
-<form>
+<form action="{{< contactFormUrl >}}" method="POST">
 
   <div class="form-personal-data">
     <div class="form-personal-data-vertical">
@@ -68,7 +68,9 @@ input[type=text], input[type=email] {
 
   <label for="message">Message</label>
   <textarea id="message" name="message" placeholder="Write your message or something..." style="height:200px"></textarea>
-
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New submission!">
+  <input type="hidden" name="_next" value="{{< contactReturnUrl >}}">
   <input type="submit" value="Send">
 </form>
 {{< /rawhtml >}}
