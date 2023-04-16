@@ -194,13 +194,13 @@ disableHugoGeneratorInject = false
     subtitle  = "Hello World!"
     weight    = 1
     [languages.en.params]
-        homeSubtitle = "The Best Software Development Studio"
+        homeSubtitle = "Engineering Champions Choose Black Arrow Gang As Their Secret Weapon"
 
   [languages.es]
     subtitle  = "Hola Mundo!"
     weight    = 2
     [languages.es.params]
-        homeSubtitle = "El Mejor Estudio de Desarrollo de Software"
+        homeSubtitle = "Los Campeones De La Ingeniería Eligen A Black Arrow Gang Como Su Arma Secreta"
 
 [menu]
   [[menu.main]]
