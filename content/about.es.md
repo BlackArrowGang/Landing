@@ -6,7 +6,7 @@ aliases = ["about-us","about-hugo"]
   name = "Hugo Authors"
 +++
 
-Somos una organización de **desarrollo de software** en rápido crecimiento con sede en México. Nuestro equipo tiene la experiencia, el entusiasmo y la dedicación necesarios. Hemos ayudado a varias empresas a lograr **éxito** y un gran rendimiento.
+Somos una organización de **desarrollo de software** en rápido crecimiento. Nuestro equipo tiene la experiencia, el entusiasmo y la dedicación necesarios. Hemos ayudado a varias empresas a lograr **éxito** y un gran rendimiento.
 
 Somos una organización fundada y dirigida por **Desarrolladores**.
 

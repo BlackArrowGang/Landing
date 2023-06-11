@@ -6,7 +6,7 @@ aliases = ["about-us","about-hugo"]
   name = "Hugo Authors"
 +++
 
-We are a rapidly growing **Software development** organization based in Mexico. Our team has the necessary expertise, zeal, and dedication, and we have helped a number of businesses achieve **success** and great performance.
+We are a rapidly growing **Software development** organization. Our team has the necessary expertise, zeal, and dedication, and we have helped a number of businesses achieve **success** and great performance.
 
 We are an organization founded and run by **Developers**.
 
