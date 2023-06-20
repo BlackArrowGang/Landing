@@ -1,29 +1,201 @@
-{{ define "body" }}
-    <body class="{{ if .Site.Params.backgroundImage }} background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');" {{ else }}"{{ end }}>
-{{ end }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Improvements -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Black Arrow Gang">
+    <meta name="description" content="Engineering Champions Choose Black Arrow Gang As Their Secret Weapon">
+    <meta name="keywords" content="DevOps services, DevOps solutions, DevOps consulting, Continuous Integration, Continuous Deployment, Infrastructure as Code">
+    <meta itemprop="name" content="Black Arrow Gang">
+    <meta itemprop="description" content="Engineering Champions Choose Black Arrow Gang As Their Secret Weapon">
+    <meta property="og:title" content="Black Arrow Gang">
+    <meta property="og:description" content="Engineering Champions Choose Black Arrow Gang As Their Secret Weapon">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blackarrowgang.github.io/Landing/">
+    <link rel="canonical" href="https://blackarrowgang.github.io/Landing/">
 
-{{ define "main" }}
-    <video autoplay muted id="myVideo">
-        <source src="{{ .Site.Params.Video.Path }}" type="video/mp4">
-    </video>
+    <!-- Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GZLHVFY8EK"></script>
+    <script>
+        var doNotTrack = !1; if (!doNotTrack) { window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag("js", new Date), gtag("config", "G-GZLHVFY8EK", { anonymize_ip: !1 }) }
+    </script>
 
-    <main aria-role="main">
-        <div>
-            {{ if .Site.Params.Portrait.Path }}
-               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
-            {{ end }}
+    <link rel="icon" type="image/x-icon" href="./img/favicon-16x16.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" defer></script>
+    <title>Black Arrow Gang - DevOps Services</title>
+</head>
+<body>
+    {{ partial "header" .}}
 
-            {{ if .Site.Title }}
-                <h1>{{ .Site.Title }}</h1>
-            {{ end }}
-
-            {{ partial "subtitle.html" . }}
-
-            {{- with .Site.Params.social }}
-                <div>
-                    {{ partial "social-icons.html" . }}
+    <main>
+        <div id="background-video">
+            <video autoplay muted onended="this.style.display = 'none';">
+            <source src="img/Flame-9049.mp4" type="video/mp4">
+            
+            Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- TODO: Background logo
+            <div id="background-logo">
+            <img src="./img/main_logo.png" alt="">
+        </div> -->
+        <div class="services-section">
+            <h1>First-Time Customer?</h1>
+            <h2>Revolutionize Your Efficiency with Our Stellar DevOps Solutions at Launch-Ready Prices!</h2>
+            <div class="filter-row">
+                <p></p>
+                <!-- <select name="" id="">
+                    <option value="">Security</option>
+                    <option value="">Containers</option>
+                    <option value="">Performance</option>
+                    <option value="">Troubleshooting</option>
+                    <option value="">Bundles</option>
+                    <option value="">Pipelines</option>
+                </select> -->
+            </div>
+            <div class="services-container">
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <p class="service-title">CI/CD PIPELINE</p>
+                        <p class="service-subtitle">Process Automation</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$449.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
                 </div>
-            {{- end }}
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <p class="service-title">ARM64 BUILD PIPELINE</p>
+                        <p class="service-subtitle">Process Automation</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$499.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
+                </div>
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <p class="service-title">SETUP OBSERVABILITY TOOLS</p>
+                        <p class="service-subtitle">Performance Optimization</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$399.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
+                </div>
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <p class="service-title">AWS BASTION SETUP</p>
+                        <p class="service-subtitle">Security</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$499.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
+                </div>
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <p class="service-title">AWS RDS PROXY SETUP</p>
+                        <p class="service-subtitle">Security</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$649.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
+                </div>
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <p class="service-title">AWS VPN SETUP</p>
+                        <p class="service-subtitle">Security</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$599.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
+                </div>
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <p class="service-title">AWS VPC PROVISIONING</p>
+                        <p class="service-subtitle">Networking</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$399.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
+                </div>
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <p class="service-title">AWS LAMBDA WITH CONTAINERS</p>
+                        <p class="service-subtitle">Provisioning</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$499.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
+                </div>
+                <div class="service-card" onclick="serviceLink()">
+                    <div>
+                        <!-- REPLACE -->
+                        <p class="service-title">AWS RDS CLUSTER SETUP</p>
+                        <p class="service-subtitle">Provisioning</p>
+                    </div>
+                    <div>
+                        <p class="service-price">$549.99</p>
+                        <a href="" class="service-link">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <h1>Schedule Your Consultation Now</h1>
+                <h2>Reserve a 30-minute slot to discuss your needs and explore how our tailored DevOps solutions can streamline your operations.</h2>
+            </div>
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694" style="width:100%;height:430px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+
+            <!-- <div class="date-side">
+                <div class="calendar">
+                    <ul class="weeks">
+                        <li>S</li>
+                        <li>M</li>
+                        <li>T</li>
+                        <li>W</li>
+                        <li>T</li>
+                        <li>F</li>
+                        <li>S</li>
+                    </ul>
+                    <ul class="days">
+                        <li id="day0" onclick="selectDate('0')"></li>
+                        <li id="day1" onclick="selectDate('1')"></li>
+                        <li id="day2" onclick="selectDate('2')"></li>
+                        <li id="day3" onclick="selectDate('3')"></li>
+                        <li id="day4" onclick="selectDate('4')"></li>
+                        <li id="day5" onclick="selectDate('5')"></li>
+                        <li id="day6" onclick="selectDate('6')"></li>
+                    </ul>
+                    <div class="date-link">
+                        <a href="https://calendly.com/reyes256/service-meeting" target="_blank">Looking Further</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hour-side">
+                <h3>Available Time Slots</h3>
+                <h4 class="selected-date"></h4>
+                <div class="time-slots">
+                    <a>2:00 - 2:30 PM</a>
+                    <a>2:30 - 3:00 PM</a>
+                    <a>3:30 - 4:00 PM</a>
+                </div>
+            </div> -->
         </div>
     </main>
-{{ end }}
+
+    {{ partial "footer" .}}
+</body>
+</html>
