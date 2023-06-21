@@ -201,7 +201,6 @@ main .services-section .service-card .service-price{
 
 main .services-section .service-card .service-link{
     font-size: .6rem;
-    /* text-decoration: underline var(--light-grey) 2px */
 }
 
 main .calendar-section{
@@ -210,7 +209,6 @@ main .calendar-section{
 
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 main .calendar-section .calendar-header h1{
@@ -225,7 +223,6 @@ main .calendar-section .calendar-header h2{
 }
 
 main .calendar-section > div{
-    text-align: center;
     width: 100%;
 }
 
