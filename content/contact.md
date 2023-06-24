@@ -1,5 +1,5 @@
 +++
-title = "Contact"
+title = "Contact Us"
 date = "2022-11-07"
 aliases = ["contact"]
 [ author ]
@@ -9,6 +9,9 @@ aliases = ["contact"]
 {{< rawhtml >}}
 
 <style>
+  form{
+    width: 100%;
+  }
 
 textarea {
   width: 100%;
@@ -49,6 +52,10 @@ input[type=text], input[type=email] {
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
+}
+
+input[type=text], input[type=email], #message{
+  color: #000;
 }
 </style>
 

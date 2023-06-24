@@ -51,6 +51,10 @@ input[type=text], input[type=email] {
   box-sizing: border-box;
   resize: vertical;
 }
+
+input[type=text], input[type=email], #message{
+  color: #000;
+}
 </style>
 
 <form action="{{< contactFormUrl >}}" method="POST">
