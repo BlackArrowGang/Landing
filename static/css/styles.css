@@ -141,10 +141,10 @@ main .main-title > *{
     font-size: 1.5rem;
     margin-top: 5px;
     font-weight: 600;
-    color: var(--green);
 }
 
 main .title-keyword{
+    color: var(--green);
 }
 
 main .main-container{
