@@ -1,0 +1,34 @@
+{{ define "main" }}
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        main h1{
+            padding: 1rem 0;
+            font-weight: 600;
+        }
+
+        main .content{
+            width: 80%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, p{
+            color: var(--grey)
+        }
+    </style>
+
+    <main>
+        <a href="/services">Go back</a>
+        <h1>{{ .Title }}</h1>
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </main>
+{{ end }}
