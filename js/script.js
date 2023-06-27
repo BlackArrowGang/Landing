@@ -102,6 +102,18 @@
 //     timeSlots.appendChild(link);
 // }
 
+const titleKeyWord = document.querySelector(".title-keyword");
+const keyWordArray = ["Platform", "SRE", "DevOps", "Cloud"];
+
+let index = 0;
+
+function updateText() {
+    titleKeyWord.textContent = keyWordArray[index];
+    index = (index + 1) % keyWordArray.length;
+}
+
+setInterval(updateText, 2000);
+
 function serviceLink(){
     window.open("https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call");
 }
