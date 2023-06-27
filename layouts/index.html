@@ -21,17 +21,17 @@
         var doNotTrack = !1; if (!doNotTrack) { window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag("js", new Date), gtag("config", "G-GZLHVFY8EK", { anonymize_ip: !1 }) }
     </script>
 
-    <link rel="icon" type="image/x-icon" href="./img/favicon-16x16.png">
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href='{{ (resources.Get "img/favicon-16x16.png").Permalink }}'>
+    <link rel="stylesheet" href='{{ (resources.Get "./css/styles.css").Permalink }}'>
+    <script src='{{ (resources.Get "/js/script.js").Permalink }}' defer></script>
     <title>Black Arrow Gang - DevOps Services</title>
 </head>
 <body>
     <header>
         <nav>
             <div class="left-side">
-                <a href="https://www.blackarrowgang.com/">
-                    <img src="./img/dragon_icon.png" alt="Dragon icon">
+                <a href="{{ .Site.BaseURL }}">
+                    <img src='{{ (resources.Get "img/dragon_icon.png").Permalink }}' alt="Dragon icon">
                     Black Arrow Gang
                 </a>
             </div>
@@ -48,7 +48,7 @@
     <main>
         <div id="background-video">
             <video autoplay muted onended="this.style.display = 'none';">
-            <source src="img/Flame-9049.mp4" type="video/mp4">
+            <source src='{{ (resources.Get "img/Flame-9049.mp4").Permalink }}' type="video/mp4">
     
             Your browser does not support the video tag.
             </video>
@@ -154,15 +154,15 @@
                             <a href="" class="service-link">See More</a>
                         </div>
                     </div>
-                    <div class="service-card" onclick="serviceLink()">
+                    <div class="service-card">
                         <div>
                             <!-- REPLACE -->
-                            <p class="service-title">AWS RDS CLUSTER SETUP</p>
+                            <p class="service-title" onclick="serviceLink()">AWS RDS CLUSTER SETUP</p>
                             <p class="service-subtitle">Provisioning</p>
                         </div>
                         <div>
                             <p class="service-price">$549.99</p>
-                            <a href="" class="service-link">See More</a>
+                            <a href="/services/aws_rds_cluster" class="service-link">See More</a>
                         </div>
                     </div>
                 </div>
@@ -218,15 +218,15 @@
         <!-- <p>Help | Privacy Policy | Contact Us</p> -->
         <span class="icons">
             <a href="mailto:blackarrowgang001@gmail.com" rel="noopener">
-                <img src="./img/icon-email.png" alt="email link icon">
+                <img src='{{ (resources.Get "/img/icon-email.png").Permalink }}' alt="email link icon">
             </a>
     
             <a href="https://github.com/BlackArrowGang" target="_blank" rel="noopener">
-                <img src="./img/icon-github.png" alt="github link icon">
+                <img src='{{ (resources.Get "/img/icon-github.png").Permalink }}' alt="github link icon">
             </a>
     
             <a href="https://youtube.com/@blackarrowgang3373" target="_blank" rel="noopener">
-                <img src="./img/icon-youtube.png" alt="youtube link icon">
+                <img src='{{ (resources.Get "/img/icon-youtube.png").Permalink }}' alt="youtube link icon">
             </a>
         </span>
     </footer>
