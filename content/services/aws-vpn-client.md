@@ -6,7 +6,7 @@ date: "2023-06-20T18:30:49-07:00"
 author: "Austerio Colosio"
 time: "1 min read"
 description: "Automate AWS serverless database clusters with Terraform for enhanced performance, security, and control."
-url: "/services/readme-test"
+url: "/services/aws-vpn-client"
 ---
 
 # **AWS VPN Setup**
