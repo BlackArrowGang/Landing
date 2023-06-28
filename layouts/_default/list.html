@@ -5,7 +5,7 @@
             <div class="post-container">
                 <div class="post-title"><a href="{{ .Params.Url }}">{{ .Title }}</a></div>
                 <div class="post-info">
-                    <p class="post-date">{{ .Date}}</p>
+                    <p class="post-date">{{ .Date | dateFormat "Jan 2, 06"}}</p>
                     <p class="post-author">{{ .Params.Author}}</p>
                     <p class="post-topic">{{ .Params.Topic}}</p>
                     <p class="post-time">{{ .Params.Time}}</p>

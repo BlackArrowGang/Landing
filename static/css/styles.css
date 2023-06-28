@@ -390,3 +390,38 @@ footer .icons img{
         width: 100%;
     }
 }
+
+
+
+/* //////////////// Post Containers //////////////// */
+
+.post-container {
+    margin-bottom: 10px;
+}
+
+.post-title {
+    font-size: 2.125rem;
+    margin-bottom: 10px;
+}
+
+.post-info {
+    margin-right: 5px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.post-info p {
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+
+.post-info img {
+    align-self: flex-start;
+}
+
+.post-description {
+    font-style: italic;
+    margin-top: 20px;
+}
