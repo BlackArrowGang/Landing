@@ -1,11 +1,11 @@
 ---
 type: "post"
-title: "AWS VPN Setup"
+title: "Secure Access Made Simple: Terraform-driven AWS Client VPN"
 topic: "Provisioning"
-date: "2023-06-20T18:30:49-07:00"
-author: "Austerio Colosio"
+date: "2023-06-28T15:30:00-07:00"
+author: "Fernando Reyes"
 time: "1 min read"
-description: "Automate AWS serverless database clusters with Terraform for enhanced performance, security, and control."
+description: "Discover how to effortlessly establish secure network connectivity and access resources within your AWS Virtual Private Cloud (VPC) using Terraform."
 url: "/services/aws-vpn-client"
 ---
 
