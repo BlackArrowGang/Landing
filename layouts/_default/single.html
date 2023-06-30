@@ -1,4 +1,18 @@
 {{ define "main" }} {{ if eq .Params.type "post" }}
+<link rel="stylesheet" href='{{ (resources.Get "./css/github-markdown.css").Permalink }}'>
+<style>
+	.markdown-body {
+		box-sizing: border-box;
+		margin: 0 auto;
+		padding: 45px;
+	}
+
+	@media (max-width: 767px) {
+		.markdown-body {
+			padding: 15px;
+		}
+	}
+</style>
 <main>
   <a href="/services">Go back</a>
   <div class="markdown-body">{{ .Content }}</div>
