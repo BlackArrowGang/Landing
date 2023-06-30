@@ -178,9 +178,11 @@ main .services-section .filter-row select{
 main .services-section .services-container{
     margin-top: .5rem;
     padding: .5rem;
-
+    max-height: 400px;
+    max-width: 90%;
     display: flex;
     flex-wrap: wrap;
+    overflow: auto;
 }
 
 main .services-section .service-card{
@@ -205,7 +207,7 @@ main .services-section .service-card .service-title{
     font-weight: 600;
 }
 
-main .services-section .service-card .service-subtitle{
+main .services-section .service-card .service-topic{
     font-size: .7rem;
 }
 
@@ -393,7 +395,7 @@ footer .icons img{
 
 
 
-/* //////////////// Post Containers //////////////// */
+/* //////////////// Post list //////////////// */
 
 .post-container {
     margin-bottom: 10px;
@@ -425,3 +427,14 @@ footer .icons img{
     font-style: italic;
     margin-top: 20px;
 }
+
+/* //////////////// Post single //////////////// */
+.container {
+    display: flex;
+  }
+  
+  aside {
+    width: 25%;
+    background-color: var(--dark-grey);
+    padding: 20px;
+  }

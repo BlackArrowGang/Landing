@@ -1,0 +1,46 @@
+- title: CI/CD PIPELINE
+  topic: Process Automation
+  price: $449.99
+  link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+
+- title: ARM64 BUILD PIPELINE
+  topic: Process Automation
+  price: $499.99
+  link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+
+- title: SETUP OBSERVABILITY TOOLS
+  topic: Performance Optimization
+  price: $399.99
+  link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+
+- title: AWS BASTION SETUP
+  topic: Security
+  price: $499.99
+  link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+
+- title: AWS RDS PROXY SETUP
+  topic: Security
+  price: $649.99
+  link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+
+- title: AWS VPN SETUP
+  topic: Security
+  price: $599.99
+  link: "services/aws-vpn-client/"
+
+- title: AWS VPC PROVISIONING
+  topic: Networking
+  price: $399.99
+  link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+
+- title: AWS LAMBDA WITH CONTAINERS
+  topic: Provisioning
+  price: $499.99
+  link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+
+- title: AWS RDS CLUSTER SETUP
+  topic: Provisioning
+  price: $549.99
+  link: "services/aws-serverless-rds-cluster"
+
+
