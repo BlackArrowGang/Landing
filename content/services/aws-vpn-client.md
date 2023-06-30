@@ -1,7 +1,9 @@
-<!-- 
+<!--
 ---
 type: "post"
 title: "Secure Access Made Simple: Terraform-driven AWS Client VPN"
+card_title: "AWS VPN SETUP"
+price: $599.99
 topic: "Security"
 date: "2023-06-27T15:30:00-07:00"
 author: "Fernando Reyes"
