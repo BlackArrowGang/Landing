@@ -4,6 +4,8 @@
 	.markdown-body {
 		box-sizing: border-box;
 		margin: 0 auto;
+    min-width: 200px;
+		max-width: 980px;
 		padding: 45px;
     background-color: #1B1C1D;
 	}
@@ -13,11 +15,44 @@
 			padding: 15px;
 		}
 	}
+  ul {
+    list-style: none; /* Remove bullet points */
+    padding: 10 0 0 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+
+  .space {
+    padding: inherit;
+  }
 </style>
-<main>
-  <a href="/services">Go back</a>
-  <div class="markdown-body">{{ .Content }}</div>
-</main>
+<div class="container">
+  <main>
+    <a href="/services">Go back</a>
+    <div class="markdown-body">{{ .Content }}</div>
+  </main>
+  <aside>
+    <div class="categories-container space">
+      <h3 class="categories">Categories</h3>
+      <ul>
+        {{ range .Site.Taxonomies.categories }}
+          <li>
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+    <div class="tags-container space">
+      <h3 class="tags">Tags</h3>
+      <ul>
+        {{ range .Site.Taxonomies.tags }}
+          <li>
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </aside>
+</div>
 {{ else }}
 <style>
   main {
