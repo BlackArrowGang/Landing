@@ -1,5 +1,5 @@
 update_post: 
-	python3 scripts/rename_and_move_readme_files.py.py
+	python3 scripts/rename_and_move_readme_files.py
 
 
 update_services:
