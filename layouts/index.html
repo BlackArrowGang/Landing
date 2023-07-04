@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main>
   <div id="background-video">
-    <video autoplay muted onended="this.style.display = 'none';">
+    <video autoplay muted onended="this.style.display = 'none';" alt="Flame video">
       <source
         src='{{ (resources.Get "img/Flame-9049.mp4").Permalink }}'
         type="video/mp4"
@@ -58,11 +58,11 @@
           solutions can streamline your operations.
         </h2>
       </div>
+      
       <!-- Calendly inline widget begin -->
       <div
         class="calendly-inline-widget"
         data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694"
-        style="width: 100%; height: 350px"
       ></div>
       <script
         type="text/javascript"

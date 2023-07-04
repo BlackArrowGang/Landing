@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- SEO Improvements -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,47 +25,51 @@
     <link rel="stylesheet" href='{{ (resources.Get "./css/styles.css").Permalink }}'>
     <script src='{{ (resources.Get "/js/script.js").Permalink }}' defer></script>
     <title>Black Arrow Gang - DevOps Services</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="left-side">
-                <a href="{{ .Site.BaseURL }}">
-                    <img src='{{ (resources.Get "img/dragon_icon.png").Permalink }}' alt="Dragon icon">
-                    Black Arrow Gang
-                </a>
-            </div>
-            <div class="right-side">
-                <a href="/contact">Contact</a>
-                <a href="/about">About Us</a>
-                <!-- 
-                <a href="#">Blog</a>
-                <a href="#">En/Es</a> 
-                -->
-            </div>
-        </nav>
-    </header>
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="logo">
+        <a href="{{ .Site.BaseURL }}">
+          <img
+            src='{{ (resources.Get "img/dragon_icon.png").Permalink }}'
+            alt="Dragon icon"
+          />
+          <span>Black Arrow Gang</span> 
+        </a>
+      </div>
 
+      <div class="navigation">
+
+        <input type="checkbox" class="toggle-menu" >
+<div class="hamburger"></div>
+
+        <ul class="menu">
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </header>
     {{ block "main" .}}
-        <h1>baseof template</h1>
+    <h1>baseof template</h1>
     {{ end }}
 
     <footer>
-        <p>© Copyright 2023, BlackArrowGang. All Rights Reserved </p>
-        <!-- <p>Help | Privacy Policy | Contact Us</p> -->
-        <span class="icons">
-            <a href="mailto:blackarrowgang001@gmail.com" rel="noopener">
-                <img src='{{ (resources.Get "/img/icon-email.png").Permalink }}' alt="email link icon">
-            </a>
-    
-            <a href="https://github.com/BlackArrowGang" target="_blank" rel="noopener">
-                <img src='{{ (resources.Get "/img/icon-github.png").Permalink }}' alt="github link icon">
-            </a>
-    
-            <a href="https://youtube.com/@blackarrowgang3373" target="_blank" rel="noopener">
-                <img src='{{ (resources.Get "/img/icon-youtube.png").Permalink }}' alt="youtube link icon">
-            </a>
-        </span>
+      <p>© Copyright 2023, BlackArrowGang. All Rights Reserved</p>
+      <!-- <p>Help | Privacy Policy | Contact Us</p> -->
+      <span class="icons">
+        <a href="mailto:blackarrowgang001@gmail.com" rel="noopener">
+          <img src='{{ (resources.Get "/img/icon-email.png").Permalink }}' alt="email link icon">
+      </a>
+
+      <a href="https://github.com/BlackArrowGang" target="_blank" rel="noopener">
+          <img src='{{ (resources.Get "/img/icon-github.png").Permalink }}' alt="github link icon">
+      </a>
+
+      <a href="https://youtube.com/@blackarrowgang3373" target="_blank" rel="noopener">
+          <img src='{{ (resources.Get "/img/icon-youtube.png").Permalink }}' alt="youtube link icon">
+      </a>
+      </span>
     </footer>
-</body>
+  </body>
 </html>

@@ -1,15 +1,13 @@
-<!--
+<!-- 
 ---
 type: "post"
 title: "Secure Access Made Simple: Terraform-driven AWS Client VPN"
-card_title: "AWS VPN SETUP"
-price: $599.99
 topic: "Security"
-date: "2023-06-27T15:30:00-07:00"
+date: "2023-06-28T15:30:00-07:00"
 author: "Fernando Reyes"
 time: "1 min read"
 description: "Discover how to effortlessly establish secure network connectivity and access resources within your AWS Virtual Private Cloud (VPC) using Terraform."
-url: "/services/aws-vpn-client"
+url: "/blog/aws-vpn-client"
 ---
 -->
 
