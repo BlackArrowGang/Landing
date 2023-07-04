@@ -1,7 +1,7 @@
 - title: AWS VPN SETUP
   topic: Security
   price: $149.99
-  link: "services/aws-vpn-client/"
+  link: "blog/aws-vpn-client/"
 
 - title: CI/CD PIPELINE
   topic: Process Automation
@@ -41,6 +41,6 @@
 - title: AWS RDS CLUSTER SETUP
   topic: Provisioning
   price: $149.99
-  link: "services/aws-serverless-rds-cluster"
+  link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
   
   # endofservices
