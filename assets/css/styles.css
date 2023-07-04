@@ -655,7 +655,10 @@ footer .icons img {
 }
 
 aside {
+  display: flex;
   width: 25%;
+  height: 100%;
   background-color: var(--dark-grey);
   padding: 20px;
+  text-align: center;
 }
