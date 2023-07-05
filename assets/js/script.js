@@ -115,7 +115,28 @@ updateText()
 // setInterval(updateText, 2000);
 
 function serviceLink(){
-    window.open("https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call");
-}
+    let today = new Date(),
+    currentYear = today.getFullYear(),
+    currentMonth = Number(today.getMonth()) + 1,
+    currentDay = today.getDate();
 
-// https://calendly.com/reyes256/service-meeting/2023-06-28T14:30:00-07:00?month=2023-06&date=2023-06-28
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+    let nextDay = currentDay + 1;
+    if(Number(nextDay) > Number(daysInMonth)){
+        nextDay = 1;
+        currentMonth += 1;
+    }
+
+    if(String(nextDay).length == 1){
+        nextDay = "0" + nextDay;
+    }
+
+    if(String(currentMonth).length == 1){
+        currentMonth = "0" + currentMonth;
+    }
+
+    let url = `https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?month=${currentYear}-${currentMonth}&date=${currentYear}-${currentMonth}-${nextDay}`;
+ 
+    window.open(url);
+}
