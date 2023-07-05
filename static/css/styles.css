@@ -1,427 +1,685 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* //////////////// Color Variables //////////////// */
 :root {
-    --black: #1B1C1D;
-    --dark-grey: #232425;
-    --grey: #757575;
-    --light-grey: #697A88;
-    --white: #EAEAEA;
-    --green: #8FD694;
-    --red: #bf4f30d6;
-    --blue: #4355FA;
+  --black: #1b1c1d;
+  --dark-grey: #232425;
+  --grey: #757575;
+  --light-grey: #697a88;
+  --white: #eaeaea;
+  --green: #8fd694;
+  --red: #bf4f30d6;
+  --blue: #4355fa;
 }
-
 /* //////////////// Global styles //////////////// */
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: rubik;
-    font-weight: 400;
-    color: var(--white);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: rubik;
+  font-weight: 400;
+  color: var(--white);
 }
 
-html{
-    scroll-behavior: smooth;
+/* //////////////// Typography //////////////// */
+.post-title {
+  font-size: 2.125rem;
+  margin-bottom: 10px;
+  font-weight: 600; /* Increased font weight for better emphasis */
 }
 
-body{
-    background-color: var(--black);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+.main-title,
+.main-title > * {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.9rem;
+  margin-top: 5px;
+  font-weight: 600; 
 }
 
-*:not(#background-video){
-    animation: fadeIn 2s;
+
+.title-keyword {
+  width: 155px;
+  text-align: center;
+}
+
+/* TODO: Ajustar el tamano para evitar movimiento de h1 */
+/* .title-keyword {
+    font-size: 1.5rem; 
+    vertical-align: middle;
+  } */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--black);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+*:not(#background-video) {
+  animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
-    from{
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to{
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
+/* //////// New Nav Stlye ////////////// */
+.header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-grey);
+  padding: 0 25px;
+  transition: 0.3s;
+  z-index: 2;
+  border-bottom: 2px solid var(--black);
+}
+
+.push{
+  margin-top: 45px;
+}
+.logo {
+  display: inline-block;
+}
+
+.logo a {
+  margin-left: 45px;
+  color: var(--white);
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+
+.logo a img {
+  width: 40px;
+  vertical-align: middle;
+}
+
+.logo a span {
+  display: inline-block; /* Use flexbox to center-align the text */
+  vertical-align: middle;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.menu li {
+  list-style-type: none;
+}
+.menu li a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+  padding: 12px 25px;
+  font-size: 18px;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+.menu li a:hover,
+.logo a:hover {
+  box-shadow: 0 -5px 0px var(--white) inset,
+    500px 0 0 rgba(255, 255, 255, 0.03) inset;
+}
+
+.hamburger {
+  position: relative;
+  width: 30px;
+  height: 4px;
+  background: var(--white);
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.hamburger:before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  right: 0;
+  background: var(--white);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.hamburger::before{
+  top: -10px;
+  width: 25px;
+}
+
+.hamburger::after{
+  top: 10px;
+  width: 25px;
+}
+
+.toggle-menu {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  z-index: 3;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.hamburger,
+.toggle-menu {
+  display: none;
+}
+
+.navigation input:checked ~ .hamburger {
+  background: transparent;
+}
+
+.navigation input:checked ~ .hamburger:before {
+top: 0;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+  .navigation input:checked ~ .hamburger:after {
+  top: 0;
+    transform: rotate(45deg);
+    width: 30px;
+  }
+
+  .navigation input:checked ~ .menu{
+    right: 0;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+  }
 /* //////////////// Nav styles //////////////// */
-nav{
+/* nav {
     background-color: var(--dark-grey);
     padding: 6px 0;
     width: 100%;
-}
+  } */
 
-    /* nav layout */
-nav, nav > div{
+/*   
+  nav layout
+  nav,
+  nav > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+  } */
 
-    /* nav icon size */
-nav img{
+/* nav icon size */
+/* nav img {
     width: 40px;
-}
+  } */
 
-    /* add space to the left of nav bar */
-nav .left-side{
+/* add space to the left of nav bar */
+/* nav .left-side {
     width: 190px;
     margin-left: 45px;
-}
+  } */
 
-    /* nav liks layout */
-nav .right-side{
+/* nav liks layout */
+/* nav .right-side {
     width: 200px;
     margin-right: 45px;
-}
+  } */
 
-    /* remove nav links default styling */
-nav .left-side a,
-nav .right-side a{
+/* remove nav links default styling */
+/* nav .left-side a,
+  nav .right-side a {
     display: flex;
     align-items: center;
-
     text-decoration: none;
-}
+    transition: color 0.3s ease; 
+  } */
+
+/* nav .left-side a:hover,
+  nav .right-side a:hover {
+    color: var(--green); 
+  } */
 /* ///////////////////////////////////////////// */
 
 /* //////////////// Main styles //////////////// */
-main{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
 }
 
 ::-webkit-scrollbar {
-    width: 10px; /* scrollbar width */
+  width: 10px; /* scrollbar width */
 }
-  
+
 ::-webkit-scrollbar-thumb {
-    background-color: var(--green); /* thumb color */
+  background-color: var(--green); /* thumb color */
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--dark-grey); /* track color */
+  background-color: var(--dark-grey); /* track color */
 }
 
 main #background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1; /* Ensures the video is positioned behind other content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensures the video is positioned behind other content */
 }
 
 main #background-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
-
 
 /* TODO: BACKGROUND LOGO 
-
-main #background-logo{
-    z-index: -2;
-}
-
-main #background-logo img{
-    z-index: -2;
-} */
-
-main .main-title,
-main .main-title > *{
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: 5px;
-    font-weight: 600;
-}
-
-main .title-keyword{
-    color: var(--green);
-}
-
-main .main-container{
-    display: flex;
-}
-
-main .services-section{
-    padding: .5rem;
-    width: 50%;
-
-    display: flex;
-    flex-direction: column;
-}
-
-main .services-section h2{
-    font-size: 1rem;
-    font-weight: 200;
-}
-
-main .services-section .filter-row{
-    display: flex;
-    justify-content: space-between;
-}
-
-main .services-section .filter-row select{
-    background-color: var(--dark-grey);
-    border: none;
-    padding: 0 20px;
-}
-
-main .services-section .services-container{
-    margin-top: .5rem;
-    padding: .5rem;
-
-    display: flex;
-    flex-wrap: wrap;
-}
-
-main .services-section .service-card{
-    background-color: var(--dark-grey);
-    padding: .5rem;
-    margin: .1rem;
-    width: 180px;
-    height: 120px;
-    border-radius: 10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-main .services-section .service-card:hover{
-    background-color: #2C2D2F;
-}
-
-main .services-section .service-card .service-title{
-    font-size: .9rem;
-    font-weight: 600;
-}
-
-main .services-section .service-card .service-subtitle{
-    font-size: .7rem;
-}
-
-main .services-section .service-card .service-price{
-    color: var(--green);
-    font-size: .8rem;
-}
-
-main .services-section .service-card .service-link{
-    font-size: .6rem;
-}
-
-main .calendar-section{
-    padding: .5rem;
-    width: 50%;
-
-    display: flex;
-    flex-direction: column;
-}
-
-main .calendar-section .calendar-header h2{
-    font-size: 1rem;
-    font-weight: 200;
-    margin-bottom: .5rem;
-}
-
-main .calendar-section > div{
-    width: 100%;
-}
-
-main .calendar-section .date-link{
-    margin-top: 1rem;
-}
-
-main .calendar-section .date-link a{
-    font-size: .6rem;
-    color: var(--white);
-}
-
-main .calendar-section .calendar{
-    margin-top: .8rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
   
-main .calendar-section .calendar ul{
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    text-align: center;
+  main #background-logo{
+      z-index: -2;
+  }
+  
+  main #background-logo img{
+      z-index: -2;
+  } */
+
+main .title-keyword {
+  color: var(--green);
 }
 
-main .calendar-section .calendar li{
-    width: 35px;
-    font-size: 1.07rem;
+main .main-container {
+  display: flex;
+  flex-direction: row;
 }
 
-main .calendar-section .calendar .weeks li{
-    padding-bottom: .2rem;
-    border-bottom: 1px solid #424242;
-    font-weight: 500;
-    cursor: default;
+main .services-section {
+  padding: 0.5rem;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
 }
 
-main .calendar-section .calendar .days li{
-    z-index: 1;
-    cursor: default;
-    position: relative;
-    margin-top: .5rem;
+main .services-section h2 {
+  font-size: 1.3rem;
+  font-weight: 350;
 }
 
-main .calendar-section .days li.inactive{
-    color: var(--grey);
+main .services-section .filter-row {
+  display: flex;
+  justify-content: space-between;
 }
 
-main .calendar-section .days li.active{
-    color: #fff;
+main .services-section .filter-row select {
+  background-color: var(--dark-grey);
+  border: none;
+  padding: 0 20px;
 }
 
-main .calendar-section .days li::before{
-    position: absolute;
-    content: "";
-    left: 50%;
-    top: 50%;
-    height: 30px;
-    width: 30px;
-    z-index: -1;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
+main .services-section .services-container {
+  margin-top: 5.5rem;
+  padding: 0.5rem;
+  max-height: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
 }
 
-main .calendar-section .days li:not(.inactive){
-    cursor: pointer;
+main .services-section .service-card {
+  background-color: var(--dark-grey);
+  padding: 0.5rem;
+  margin: 0.1rem;
+  width: 180px;
+  height: 120px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
 }
 
-main .calendar-section .days li.active::before{
-    background: var(--blue);
+main .services-section .service-card:hover {
+  background-color: #2c2d2f;
+  transform: translateY(-5px);
+  /* transition: background-color 0.3s ease; 
+  Added hover effect for service cards */
 }
 
-main .calendar-section .days li:not(.active):not(.inactive):hover::before{
-    background: #717171;
+main .services-section .service-card .service-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 
+main .services-section .service-card .service-topic {
+  font-size: 0.7rem;
+}
+
+main .services-section .service-card .service-price {
+  color: var(--green);
+  font-size: 0.8rem;
+}
+
+main .services-section .service-card .service-link {
+  font-size: 0.6rem;
+}
+
+main .calendar-section {
+  padding: 0.5rem;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+main .calendar-section .calendar-header h2 {
+  font-size: 1.3rem;
+  font-weight: 350;
+  margin-bottom: 0.5rem;
+}
+
+main .calendar-section > div {
+  width: 100%;
+}
+
+main .calendar-section .date-link {
+  margin-top: 1rem;
+}
+
+main .calendar-section .date-link a {
+  font-size: 0.6rem;
+  color: var(--white);
+}
+
+main .calendar-section .calendar {
+  margin-top: 0.8rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .calendar-section .calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+main .calendar-section .calendar li {
+  width: 35px;
+  font-size: 1.07rem;
+}
+
+main .calendar-section .calendar .weeks li {
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #424242;
+  font-weight: 500;
+  cursor: default;
+}
+
+main .calendar-section .calendar .days li {
+  z-index: 1;
+  cursor: default;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+main .calendar-section .days li.inactive {
+  color: var(--grey);
+}
+
+main .calendar-section .days li.active {
+  color: #fff;
+}
+
+main .calendar-section .days li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 30px;
+  width: 30px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .calendar-section .days li:not(.inactive) {
+  cursor: pointer;
+}
+
+main .calendar-section .days li.active::before {
+  background: var(--blue);
+}
+
+main .calendar-section .days li:not(.active):not(.inactive):hover::before {
+  background: #717171;
 }
 /* main .calendar-section .days li:not(.inactive):hover::before{
-    background: #717171;
-} */
+      background: #717171;
+  } */
 
-main .calendar-section .hour-side{
-    margin-top: 1rem;
+main .calendar-section .hour-side {
+  margin-top: 1rem;
 }
 
-main .calendar-section .hour-side .time-slots{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+main .calendar-section .hour-side .time-slots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-main .calendar-section .hour-side .time-slots a:hover{
-    background-color: #8b3724;
+main .calendar-section .hour-side .time-slots a:hover {
+  background-color: #8b3724;
 }
 
-main .calendar-section .hour-side .time-slots a{
-    background-color: var(--red);
-    border: none;
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 10px 40px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin: .3rem;
-    /* width: 8rem; */
+main .calendar-section .hour-side .time-slots a {
+  background-color: var(--red);
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0.3rem;
+  /* width: 8rem; */
+}
+
+main .calendly-inline-widget {
+  position: relative;
+  min-width: 320px;
+  height: 750px;
+}
+
+aside .calendly-inline-widget {
+  position: fixed !important ;
+  min-width: 320px;
+  height: 750px;
 }
 
 /* //////////////// Footer styles //////////////// */
-footer{
-    background-color: var(--dark-grey);
-    padding: 10px 0;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+footer {
+  background-color: var(--dark-grey);
+  padding: 10px 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px solid var(--black);
 }
 
-footer .icons{
-    width: 150px;
+footer .icons {
+  width: 150px;
 
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
-footer .icons img{
-    width: 2rem;
+footer .icons img {
+  width: 2rem;
 }
+
+
 
 /* //////////////// Responsive Design //////////////// */
 @media (max-width: 1065px) {
-    /* Styles for screens smaller than 600px */
-    main .calendar-section{
-        flex-direction: column;
-    }
+  /* Styles for screens smaller than 1065px */
+  main .main-container {
+    flex-direction: column-reverse;
+  }
 
-    main .calendar-section .date-side,
-    main .calendar-section .hour-side{
-        width: 100%;
-    }
+  main .services-section .services-container {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    max-height: 400px;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+  }
+  main .services-section .service-card {
+    background-color: var(--dark-grey);
+    padding: 0.5rem;
+    margin: 0.1rem;
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    main .calendar-section .hour-side{
-        margin-top: 1rem;
-    }    
+  main .calendar-section {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  main .calendar-header h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 0.5rem;
+  }
+
+  main .services-section {
+    width: 100%;
+    padding-bottom: 100px;
+  }
+
+  main .calendar-section .date-side,
+  main .calendar-section .hour-side {
+    width: 100%;
+  }
+
+  main .calendar-section .hour-side {
+    margin-top: 1rem;
+  }
+
+  /* ///// nav style ///// */
+.hamburger,
+.toggle-menu {
+  display: block;
 }
 
-@media (max-width: 820px) {
-    /* Styles for screens smaller than 600px */
-    main{
-        flex-direction: column;
-    }
-
-    main .services-section,
-    main .calendar-section{
-        width: 100%;
-    }
+.header {
+  padding: 10px 20px;
+}
+.menu {
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  background: var(--black);
+  width: 300px;
+  height: 100%;
 }
 
+.menu li {
+  width: 100%;
+}
 
+.menu li a,
+.menu li a:hover {
+  padding: 12px 25px;
+  font-size: 24px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+}
 
-/* //////////////// Post Containers //////////////// */
+/* //////////////// Post list //////////////// */
 
 .post-container {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .post-title {
-    font-size: 2.125rem;
-    margin-bottom: 10px;
+  font-size: 2.125rem;
+  margin-bottom: 10px;
 }
 
 .post-info {
-    margin-right: 5px;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
+  margin-right: 5px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .post-info p {
-    margin-right: 10px;
-    margin-left: 5px;
+  margin-right: 10px;
+  margin-left: 5px;
 }
 
-
 .post-info img {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .post-description {
-    font-style: italic;
-    margin-top: 20px;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* //////////////// Post single //////////////// */
+.container {
+  display: flex;
+}
+
+aside {
+  width: 25%;
+  height: 100%;
+  background-color: var(--dark-grey);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--black);  
 }

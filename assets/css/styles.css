@@ -30,10 +30,17 @@
 
 .main-title,
 .main-title > * {
+  display: inline-block;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   margin-top: 5px;
-  font-weight: 500; /* Adjusted font weight for better readability */
+  font-weight: 600; 
+}
+
+
+.title-keyword {
+  width: 155px;
+  text-align: center;
 }
 
 /* TODO: Ajustar el tamano para evitar movimiento de h1 */
@@ -78,6 +85,7 @@ body {
   padding: 0 25px;
   transition: 0.3s;
   z-index: 2;
+  border-bottom: 2px solid var(--black);
 }
 
 .push{
@@ -319,8 +327,8 @@ main .services-section {
 }
 
 main .services-section h2 {
-  font-size: 1rem;
-  font-weight: 200;
+  font-size: 1.3rem;
+  font-weight: 350;
 }
 
 main .services-section .filter-row {
@@ -391,8 +399,8 @@ main .calendar-section {
 }
 
 main .calendar-section .calendar-header h2 {
-  font-size: 1rem;
-  font-weight: 200;
+  font-size: 1.3rem;
+  font-weight: 350;
   margin-bottom: 0.5rem;
 }
 
@@ -510,6 +518,12 @@ main .calendly-inline-widget {
   height: 750px;
 }
 
+aside .calendly-inline-widget {
+  position: fixed !important ;
+  min-width: 320px;
+  height: 750px;
+}
+
 /* //////////////// Footer styles //////////////// */
 footer {
   background-color: var(--dark-grey);
@@ -520,6 +534,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-top: 2px solid var(--black);
 }
 
 footer .icons {
@@ -666,5 +681,5 @@ aside {
   background-color: var(--dark-grey);
   padding: 20px;
   text-align: center;
-  
+  border-bottom: 2px solid var(--black);  
 }
