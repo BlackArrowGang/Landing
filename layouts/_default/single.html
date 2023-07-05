@@ -31,38 +31,42 @@
     <div class="markdown-body">{{ .Content }}</div>
   </main>
   <aside>
-    {{/*  <div class="categories-container space">
-      <h3 class="categories">Categories</h3>
-      <ul>
-        {{ range .Site.Taxonomies.categories }}
-          <li>
-            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-          </li>
-        {{ end }}
-      </ul>
-    </div>
-    <div class="tags-container space">
-      <h3 class="tags">Tags</h3>
-      <ul>
-        {{ range .Site.Taxonomies.tags }}
-          <li>
-            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-          </li>
-        {{ end }}
-      </ul>
-    </div>  */}}
+    <div class="push aside-content">
+
+
+      {{/*  <div class="categories-container space">
+        <h3 class="categories">Categories</h3>
+        <ul>
+          {{ range .Site.Taxonomies.categories }}
+            <li>
+              <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="tags-container space">
+        <h3 class="tags">Tags</h3>
+        <ul>
+          {{ range .Site.Taxonomies.tags }}
+            <li>
+              <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>  */}}
+      <div
+      class="calendly-inline-widget"
+      data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694"
+      >
       <h2>Need help with this?</h2>
       <h3>Let us handle your needs</h3>
-    <div
-        class="calendly-inline-widget"
-        data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694"
-        style="height:750px;"
-        ></div>
-      <script
-        type="text/javascript"
-        src="https://assets.calendly.com/assets/external/widget.js"
-        async
-      ></script>
+    </div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
+    </div>
   </aside>
 </div>
 {{ else }}
