@@ -4,4 +4,3 @@
 [submodule "ArsenalContent"]
 	path = ArsenalContent
 	url = https://github.com/BlackArrowGang/Arsenal.git
-	branch = dev
