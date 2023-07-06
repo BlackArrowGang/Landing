@@ -37,14 +37,14 @@
       </div>
       <div class="services-container">
         {{ range .Site.Data.services }}
-        <div class="service-card">
-          <div onclick="serviceLink()">
+        <div class="service-card" onclick="serviceLink(event)">
+          <div>
             <p class="service-title">{{ .title }}</p>
             <p class="service-topic">{{ .topic }}</p>
           </div>
           <div>
             <p class="service-price">{{ .price }}</p>
-            <a href=" {{ .link }} " target="_blank" class="service-link">Explore solution</a>
+            <a href="{{ .link }}" target="_blank" class="service-link">Explore solution</a>
           </div>
         </div>
         {{ end }}
