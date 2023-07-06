@@ -115,29 +115,31 @@ function updateText() {
 
 setInterval(updateText, 2000);
 
-function serviceLink(){
-    let today = new Date(),
-    currentYear = today.getFullYear(),
-    currentMonth = Number(today.getMonth()) + 1,
-    currentDay = today.getDate();
+function serviceLink(event) {
+    if (event.target.tagName.toLowerCase() !== 'a') {
+      let today = new Date();
+      let currentYear = today.getFullYear();
+      let currentMonth = Number(today.getMonth()) + 1;
+      let currentDay = today.getDate();
 
-    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-    let nextDay = currentDay + 1;
-    if(Number(nextDay) > Number(daysInMonth)){
-        nextDay = 1;
-        currentMonth += 1;
+      let nextDay = currentDay + 1;
+      if(Number(nextDay) > Number(daysInMonth)){
+          nextDay = 1;
+          currentMonth += 1;
+      }
+  
+      if(String(nextDay).length == 1){
+          nextDay = "0" + nextDay;
+      }
+  
+      if(String(currentMonth).length == 1){
+          currentMonth = "0" + currentMonth;
+      }
+  
+      let url = `https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?month=${currentYear}-${currentMonth}&date=${currentYear}-${currentMonth}-${nextDay}`;
+   
+      window.open(url);
     }
-
-    if(String(nextDay).length == 1){
-        nextDay = "0" + nextDay;
-    }
-
-    if(String(currentMonth).length == 1){
-        currentMonth = "0" + currentMonth;
-    }
-
-    let url = `https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?month=${currentYear}-${currentMonth}&date=${currentYear}-${currentMonth}-${nextDay}`;
- 
-    window.open(url);
-}
+  }
