@@ -116,7 +116,6 @@ function updateText() {
 setInterval(updateText, 2000);
 
 function serviceLink(event) {
-    console.log(event.target.tagName)
     if (event.target.tagName.toLowerCase() !== 'a') {
       let today = new Date();
       let currentYear = today.getFullYear();
