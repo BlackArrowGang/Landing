@@ -14,30 +14,38 @@
             <div id="background-logo">
             <img src="./img/main_logo.png" alt="">
         </div> -->
-  <h1 class="main-title">
-    <strong>Focus on your core business</strong>: let us handle your
-    <span class="title-keyword">DevOps</span> <strong>needs</strong>
-  </h1>
   <div class="main-container">
     <div class="services-section">
-      <h2>
-        <strong>First time customer?</strong> Revolutionize your efficiency with
-        our stellar DevOps solutions at launch-ready prices!
-      </h2>
+      <div class="jumbotron">
+        <h1 class=" main-title">
+          <strong>Focus on your core business</strong>: let us handle your
+          <span class="title-keyword">DevOps</span> <strong>needs</strong>
+        </h1>
+        <h2>
+          <strong>First time customer?</strong> Revolutionize your efficiency with
+          our stellar DevOps solutions at launch-ready prices!
+        </h2>
+      </div>
+      {{/*
       <div class="filter-row">
         <p></p>
-        <!-- <select name="" id="">
-            <option value="">Security</option>
-            <option value="">Containers</option>
-            <option value="">Performance</option>
-            <option value="">Troubleshooting</option>
-            <option value="">Bundles</option>
-            <option value="">Pipelines</option>
-        </select> -->
+        <select name="" id="">
+          <option value="">Security</option>
+          <option value="">Containers</option>
+          <option value="">Performance</option>
+          <option value="">Troubleshooting</option>
+          <option value="">Bundles</option>
+          <option value="">Pipelines</option>
+        </select>
       </div>
+      */}}
       <div class="services-container">
-        {{ range .Site.Data.services }}
-        <div class="service-card" onclick="serviceLink(event)">
+        {{ range .Site.Data.services }} {{ $lowercase := lower .topic }} {{
+        $hyphenatedt_topic := replace $lowercase " " "-" }}
+        <div
+          class="service-card {{ $hyphenatedt_topic }}"
+          onclick="serviceLink(event)"
+        >
           <div>
             <p class="service-title">{{ .title }}</p>
             <p class="service-topic">{{ .topic }}</p>
@@ -58,7 +66,7 @@
           solutions can streamline your operations.
         </h2>
       </div>
-      
+
       <!-- Calendly inline widget begin -->
       <div
         class="calendly-inline-widget"
