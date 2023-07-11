@@ -7,9 +7,8 @@ date: "2023-06-28T15:30:00-07:00"
 author: "Abrham Martinez"
 time: "1 min read"
 categories:
-  - Category1
-  - Category2
-  - Category3
+  - Security
+  - Aws
 
 description: x"Discover the power of an AWS EC2 Bastion instance, a centralized and secure gateway that enhances your cloud infrastructure's security."
 url: "/blog/aws-bastion-ssm"

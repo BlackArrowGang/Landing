@@ -6,9 +6,12 @@ topic: "Security"
 date: "2023-06-28T15:30:00-07:00"
 author: "Fernando Reyes"
 time: "1 min read"
+categories:
+  - Security
+  - Aws
 description: "Discover how to effortlessly establish secure network connectivity and access resources within your AWS Virtual Private Cloud (VPC) using Terraform."
 url: "/blog/aws-vpn-client"
-banner_url: https://raw.githubusercontent.com/BlackArrowGang/Arsenal/feat/added-arm64-solution/quiver/aws-vpn-client/diagrams/vpn-diagram.png
+banner_url: https://raw.githubusercontent.com/BlackArrowGang/Arsenal/main/quiver/aws-vpn-client/diagrams/vpn-diagram.png
 ---
 -->
 
@@ -27,7 +30,7 @@ banner_url: https://raw.githubusercontent.com/BlackArrowGang/Arsenal/feat/added-
   - [**How It Works**](#how-it-works)
   - [**Support**](#support)
 
-![VPN Diagram](https://raw.githubusercontent.com/BlackArrowGang/Arsenal/dev/quiver/aws-vpn-client/diagrams/vpn-diagram.png)
+![VPN Diagram](https://raw.githubusercontent.com/BlackArrowGang/Arsenal/main/quiver/aws-vpn-client/diagrams/vpn-diagram.png)
 
 ## **Use Cases**
 The AWS VPN setup can be utilized in various scenarios, including:

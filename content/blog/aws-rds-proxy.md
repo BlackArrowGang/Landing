@@ -6,10 +6,12 @@ topic: "Provisioning"
 date: "2023-07-01T15:30:00-07:00"
 author: "Fernando Reyes"
 time: "2 min read"
-categories: ["Security, AWS"]
+categories:
+  - Security
+  - Aws
 description: "Boost your Amazon RDS databases with AWS RDS Proxy! Experience unrivaled scalability, availability, and security. With automatic connection pooling and failover mechanisms, managing your databases becomes a breeze. "
 url: "/blog/aws-rds-proxy"
-banner_url: https://raw.githubusercontent.com/BlackArrowGang/Arsenal/feat/added-arm64-solution/quiver/aws-rds-proxy/diagrams/aws-rds-proxy-diagram.png
+banner_url: https://raw.githubusercontent.com/BlackArrowGang/Arsenal/main/quiver/aws-rds-proxy/diagrams/aws-rds-proxy-diagram.png
 ---
 -->
 
