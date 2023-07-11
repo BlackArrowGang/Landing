@@ -1,57 +1,195 @@
 {{ define "main" }}
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .post-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 1.5rem;
+  }
+
+  .post {
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: #232425;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+  }
+
+  .post:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  .post-image {
+    flex-basis: 30%;
+    margin-right: 20px;
+    margin-left: 20px;
+    max-width: 100%;
+  }
+
+  .post-image img {
+    width: 100%;
+    max-height: 155px;
+    border-radius: 5px;
+  }
+
+  .post-content {
+    margin-left: 20px;
+    flex-basis: 70%;
+  }
+
+  .post-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .post-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  .post-description {
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 20px;
+  }
+  
+  .post-description i {
+    display: inline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .category-container {
+    margin-bottom: 40px;
+  }
+
+  .category-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .category-item {
+    display: block;
+    margin-right: 10px;
+  }
+
+  .category-link {
+    text-decoration: none;
+    background-color: #eee;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+  }
+
+  /* Sidebar Styles */
+
+  .sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #232425;
+    border-radius: 5px;
+  }
+
+  .sidebar-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-item {
+    margin-bottom: 10px;
+  }
+
+  .sidebar-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+</style>
+
 <div class="container">
-
-    <main>
-        <h1>{{ .Title }}</h1>
-        {{ range .Pages}}
-            <div class="post-container">
-                <div class="post-title"><a href="{{ .Params.Url }}">{{ .Title }}</a></div>
-                <div class="post-info">
-                    <p class="post-date">{{ .Date | dateFormat "Jan 2, 06"}}</p>
-                    <p class="post-author">{{ .Params.Author}}</p>
-                    <p class="post-topic">{{ .Params.Topic}}</p>
-                    <p class="post-time">{{ .Params.Time}}</p>
-                </div>
-                <div class="post-description"><i>{{ .Params.Description}}</i></div>
-            </div>
-            <hr>
-            <br>
-        {{ end }}
-    </main>
-    <aside class="push">
-        {{/*  <div class="categories-container space">
-          <h3 class="categories">Categories</h3>
-          <ul>
-            {{ range .Site.Taxonomies.categories }}
-              <li>
-                <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
+  <main class="post-container">
+    <div class="post-container">
+      {{ range .Pages }}
+      <div class="post">
+        <div class="post-content">
+          <div class="post-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </div>
+          <div class="post-info">
+            <p class="post-date">{{ .Date | dateFormat "Jan 2, 06" }}</p>
+            <p class="post-author">By {{ .Params.Author }}</p>
+            <p class="post-topic">{{ .Params.Topic }}</p>
+            <p class="post-time">{{ .Params.Time }}</p>
+          </div>
+          <div class="post-description"><i>{{ .Params.Description }}</i></div>
         </div>
-        <div class="tags-container space">
-          <h3 class="tags">Tags</h3>
-          <ul>
-            {{ range .Site.Taxonomies.tags }}
-              <li>
-                <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
-        </div>  */}}
-          {{/*  <h2>Need help with this?</h2>
-          <h3>Let us handle your needs</h3>
-        <div
-            class="calendly-inline-widget-aside"
-            data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694"
-            style="height:750px;"
-            ></div>
-          <script
-            type="text/javascript"
-            src="https://assets.calendly.com/assets/external/widget.js"
-            async
-          ></script>  */}}
-      </aside>
+        <div class="post-image">
+          <img src="{{ .Params.banner_url}}" alt="Small Picture" />
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </main>
 
+  <aside class="sidebar push">
+    <div
+      class="calendly-inline-widget-fixed"
+      data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694"
+      >
+      <h2>Need help with this?</h2>
+      <h3>Let us handle your needs</h3>
+    </div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
+    </div>
+    <div class="category-container">
+      <h2 class="category-title">Categories</h2>
+      <ul class="category-list">
+        {{ range .Site.Taxonomies.categories }}
+        <li class="category-item">
+          <a href="{{ .Page.Permalink }}" class="category-link"
+            >{{ .Page.Title }}</a
+          >
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </aside>
 </div>
 {{ end }}

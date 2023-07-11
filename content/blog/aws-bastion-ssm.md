@@ -6,8 +6,14 @@ topic: "Security"
 date: "2023-06-28T15:30:00-07:00"
 author: "Abrham Martinez"
 time: "1 min read"
-description: "Discover the power of an AWS EC2 Bastion instance, a centralized and secure gateway that enhances your cloud infrastructure's security."
+categories:
+  - Category1
+  - Category2
+  - Category3
+
+description: x"Discover the power of an AWS EC2 Bastion instance, a centralized and secure gateway that enhances your cloud infrastructure's security."
 url: "/blog/aws-bastion-ssm"
+banner_url: https://raw.githubusercontent.com/BlackArrowGang/Arsenal/main/quiver/aws-bastion-ssm/diagrams/bastion-diagram.png
 ---
 -->
 

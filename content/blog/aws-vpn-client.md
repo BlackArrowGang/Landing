@@ -8,6 +8,7 @@ author: "Fernando Reyes"
 time: "1 min read"
 description: "Discover how to effortlessly establish secure network connectivity and access resources within your AWS Virtual Private Cloud (VPC) using Terraform."
 url: "/blog/aws-vpn-client"
+banner_url: https://raw.githubusercontent.com/BlackArrowGang/Arsenal/feat/added-arm64-solution/quiver/aws-vpn-client/diagrams/vpn-diagram.png
 ---
 -->
 
@@ -17,12 +18,14 @@ url: "/blog/aws-vpn-client"
 
 ## **Table of contents**
 
-* [Use Cases](#use-cases)
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Usage](#usage)
-* [How It Works](#how-it-works)
-* [Support](#support)
+- [**Simplify Remote Access: Effective AWS Client VPN Endpoint Setup**](#simplify-remote-access-effective-aws-client-vpn-endpoint-setup)
+  - [**Table of contents**](#table-of-contents)
+  - [**Use Cases**](#use-cases)
+  - [**Requirements**](#requirements)
+  - [**Installation**](#installation)
+  - [**Usage**](#usage)
+  - [**How It Works**](#how-it-works)
+  - [**Support**](#support)
 
 ![VPN Diagram](https://raw.githubusercontent.com/BlackArrowGang/Arsenal/dev/quiver/aws-vpn-client/diagrams/vpn-diagram.png)
 

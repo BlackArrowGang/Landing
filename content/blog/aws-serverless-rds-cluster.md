@@ -6,8 +6,10 @@ topic: "Provisioning"
 date: "2023-06-26T15:30:00-07:00"
 author: "Fernando Reyes"
 time: "2 min read"
+categories: ["Security AWS"]
 description: "Learn how to set up a scalable and secure serverless database cluster on AWS using Terraform. Automate the configuration process and enjoy the benefits of Aurora's performance and reliability while maintaining control over access and security."
 url: "/blog/aws-serverless-rds-cluster"
+banner_url: https://raw.githubusercontent.com/BlackArrowGang/Arsenal/feat/added-arm64-solution/quiver/aws-serverless-rds-cluster/diagrams/aws-serverless-rds-cluster-diagram.png
 ---
 -->
 
@@ -17,12 +19,14 @@ url: "/blog/aws-serverless-rds-cluster"
 
 ## **Table of contents**
 
-* [Use Cases](#use-cases)
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Usage](#usage)
-* [How It Works](#how-it-works)
-* [Support](#support)
+- [**RDS Serverless Cluster: Available, Reliable, Financiable**](#rds-serverless-cluster-available-reliable-financiable)
+  - [**Table of contents**](#table-of-contents)
+  - [**Use Cases**](#use-cases)
+  - [**Requirements**](#requirements)
+  - [**Installation**](#installation)
+  - [**Usage**](#usage)
+  - [**How It Works**](#how-it-works)
+  - [**Support**](#support)
 
 ![RDS Cluster Diagram](https://raw.githubusercontent.com/BlackArrowGang/Arsenal/main/quiver/aws-serverless-rds-cluster/diagrams/aws-serverless-rds-cluster-diagram.png)
 

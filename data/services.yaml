@@ -2,49 +2,54 @@
   topic: Security
   price: $149.99
   link: "blog/aws-vpn-client/"
+  # background_image_url: https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 
 - title: AWS LAMBDA WITH CONTAINERS
   topic: Provisioning
   price: $149.99
   link: "blog/aws-lambda-container"
+  # background_image_url: https://media.istockphoto.com/id/1445089512/es/foto/concepto-de-auditor%C3%ADa.jpg?s=612x612&w=0&k=20&c=KED04gzzCutIyJB4wRlaGAVsy0tSgZ2JyM7mhgpAC7w=
 
 - title: AWS RDS PROXY SETUP
   topic: Security
   price: $149.99
   link: "blog/aws-rds-proxy"
+  # background_image_url: https://media.istockphoto.com/id/1386485419/es/foto/concepto-de-planificaci%C3%B3n-presupuestaria-y-financiera-con-contador-trabajando-en-el-pron%C3%B3stico.jpg?s=612x612&w=0&k=20&c=XpwWmIvF8T5xQN0kJ_O4W0IFBHgWsBoGS7zzP5OzXYs=
 
 - title: AWS RDS SERVERLESS CLUSTER SETUP
   topic: Provisioning
   price: $149.99
   link: "blog/aws-serverless-rds-cluster"
+  # background_image_url: https://media.istockphoto.com/id/1358835459/es/foto/tecnolog%C3%ADa-de-automatizaci%C3%B3n-rob%C3%B3tica-de-procesos-para-automatizar-tareas-empresariales-con-ia.jpg?s=612x612&w=0&k=20&c=S18_htRhOOEfYpDG51gsbzS4RonWfnIN0MiJgZ8oj9A=
 
 - title: AWS BASTION SETUP
   topic: Security
   price: $149.99
   link: "blog/aws-bastion-ssm"
+  # background_image_url: https://media.istockphoto.com/id/1357020474/es/foto/gesti%C3%B3n-de-la-calidad-con-qa-qc-y-mejora-concepto-de-normalizaci%C3%B3n-y-certificaci%C3%B3n.jpg?s=612x612&w=0&k=20&c=DQRdX18C8spURWGdkdhCf1_yU3zqY-_TkBi1Chrujuc=
 
 - title: CI/CD PIPELINE
   topic: Process Automation
   price: $149.99
   link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+  # background_image_url: https://media.istockphoto.com/id/1366312960/es/foto/gerente-de-marketing-digital-que-trabaja-en-publicidad-en-redes-sociales-publicidad-en-l%C3%ADnea.jpg?s=2048x2048&w=is&k=20&c=s7z8Opr5ndrNj561zjrl9-AxdvVArcmuYNRXFWWXBiY=
 
 - title: ARM64 BUILD PIPELINE
   topic: Process Automation
   price: $149.99
   link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+  # background_image_url: https://media.istockphoto.com/id/1445353573/es/foto/formulario-de-evaluaci%C3%B3n-cuestionario-cuestionario-o-encuesta-con-casillas-de-verificaci%C3%B3n-en.jpg?s=612x612&w=0&k=20&c=fYDT05zSV193SBbwdzI6fmv9iRipIFPdDfEtSJPMtrY=
 
 - title: SETUP OBSERVABILITY TOOLS
   topic: Performance Optimization
   price: $149.99
   link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+  # background_image_url: https://media.istockphoto.com/id/1346698461/es/foto/desarrollo-%C3%A1gil-de-software-con-desarrollador-utilizando-la-metodolog%C3%ADa-kanban-board-framework.jpg?s=612x612&w=0&k=20&c=v9Hhfn7y6o9DAA0DolWPgg68ygm30ZyYPebDvY-vwWo=
 
 - title: AWS VPC PROVISIONING
   topic: Networking
   price: $149.99
   link: "https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call"
+  # background_image_url: https://media.istockphoto.com/id/1335717953/es/foto/jefe-de-proyecto-trabajando-en-la-computadora-en-la-oficina-concepto-con-iconos-de-%C3%A1reas-de.jpg?s=612x612&w=0&k=20&c=HXAnOE0NTV87IaQ-bwWMgriSvdYrHkd03lCuSyizPKg=
 
-
-
-
-  
   # endofservices

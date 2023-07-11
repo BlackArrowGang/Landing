@@ -27,13 +27,13 @@
 //     if(currentDay == today.getDate()){
 //         // current day
 //         isPast = false
-//     } 
+//     }
 
 //     if(currentDay == today.getDate() + 1){
 //         // target day
 //         isPast = false
 //         cell.classList.add("active");
-//     } 
+//     }
 
 //     if(isPast){
 //         // previous days
@@ -50,13 +50,13 @@
 //     if(selectedDayCell.classList.contains('inactive')){
 //         return
 //     }
-    
+
 //     let currentMonth = startingDay.getMonth()
-    
+
 //     if(Number(selectedDay) < Number(firstDayOfWeek)){
 //         currentMonth += 1;
 //     }
-    
+
 //     let choosenDate = new Date(startingDay.getFullYear(),currentMonth,selectedDay)
 
 //     selectedDate.innerText = `${days[id]}, ${months[currentMonth]} ${selectedDay}`;
@@ -105,41 +105,62 @@
 const titleKeyWord = document.querySelector(".title-keyword");
 const keyWordArray = ["Platform", "SRE", "DevOps", "Cloud"];
 
-
 let index = 0;
 
 function updateText() {
-    titleKeyWord.textContent = keyWordArray[index];
-    index = (index + 1) % keyWordArray.length;
+  titleKeyWord.textContent = keyWordArray[index];
+  index = (index + 1) % keyWordArray.length;
 }
 
 setInterval(updateText, 2000);
 
 function serviceLink(event) {
-    if (event.target.tagName.toLowerCase() !== 'a') {
-      let today = new Date();
-      let currentYear = today.getFullYear();
-      let currentMonth = Number(today.getMonth()) + 1;
-      let currentDay = today.getDate();
+  if (event.target.tagName.toLowerCase() !== "a") {
+    let today = new Date();
+    let currentYear = today.getFullYear();
+    let currentMonth = Number(today.getMonth()) + 1;
+    let currentDay = today.getDate();
 
-      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-      let nextDay = currentDay + 1;
-      if(Number(nextDay) > Number(daysInMonth)){
-          nextDay = 1;
-          currentMonth += 1;
-      }
-  
-      if(String(nextDay).length == 1){
-          nextDay = "0" + nextDay;
-      }
-  
-      if(String(currentMonth).length == 1){
-          currentMonth = "0" + currentMonth;
-      }
-  
-      let url = `https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?month=${currentYear}-${currentMonth}&date=${currentYear}-${currentMonth}-${nextDay}`;
-   
-      window.open(url);
+    let nextDay = currentDay + 1;
+    if (Number(nextDay) > Number(daysInMonth)) {
+      nextDay = 1;
+      currentMonth += 1;
     }
+
+    if (String(nextDay).length == 1) {
+      nextDay = "0" + nextDay;
+    }
+
+    if (String(currentMonth).length == 1) {
+      currentMonth = "0" + currentMonth;
+    }
+
+    let url = `https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?month=${currentYear}-${currentMonth}&date=${currentYear}-${currentMonth}-${nextDay}`;
+
+    window.open(url);
   }
+}
+
+var lastScrollPosition = 0;
+var el = document.querySelector('.fixed');
+var widgetHeight = el.offsetHeight;
+
+window.addEventListener('scroll', function() {
+  var currentScrollPosition = window.pageYOffset;
+  var isPositionFixed = (window.getComputedStyle(el).position === 'fixed');
+
+  if (currentScrollPosition > lastScrollPosition && !isPositionFixed) {
+    el.style.position = 'fixed';
+    el.style.top = '-' + (widgetHeight * 0.3) + 'px';
+  }
+
+  if (currentScrollPosition < lastScrollPosition && isPositionFixed) {
+    el.style.position = 'static';
+    el.style.top = '0px';
+  }
+
+  lastScrollPosition = currentScrollPosition;
+});
+
