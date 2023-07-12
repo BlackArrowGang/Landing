@@ -28,7 +28,7 @@ url: "/blog/aws-vpn-client"
 * [How It Works](#how-it-works)
 * [Support](#support)
 
-![VPN Diagram](https://raw.githubusercontent.com/BlackArrowGang/Arsenal/dev/quiver/aws-vpn-client/diagrams/vpn-diagram.png)
+![VPN Diagram](https://raw.githubusercontent.com/BlackArrowGang/Arsenal/main/quiver/aws-vpn-client/diagrams/vpn-diagram.png)
 
 ## **Use Cases**
 The AWS VPN setup can be utilized in various scenarios, including:
