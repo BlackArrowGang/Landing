@@ -1,57 +1,63 @@
 {{ define "main" }}
+
+
 <div class="container">
-
-    <main>
-        <h1>{{ .Title }}</h1>
-        {{ range .Pages}}
-            <div class="post-container">
-                <div class="post-title"><a href="{{ .Params.Url }}">{{ .Title }}</a></div>
-                <div class="post-info">
-                    <p class="post-date">{{ .Date | dateFormat "Jan 2, 06"}}</p>
-                    <p class="post-author">{{ .Params.Author}}</p>
-                    <p class="post-topic">{{ .Params.Topic}}</p>
-                    <p class="post-time">{{ .Params.Time}}</p>
-                </div>
-                <div class="post-description"><i>{{ .Params.Description}}</i></div>
-            </div>
-            <hr>
-            <br>
-        {{ end }}
-    </main>
-    <aside class="push">
-        {{/*  <div class="categories-container space">
-          <h3 class="categories">Categories</h3>
-          <ul>
-            {{ range .Site.Taxonomies.categories }}
-              <li>
-                <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
+  <main class="post-container">
+    <div class="Categories-container">
+      <div class="dropdown">
+        <button class="dropbtn">Categories</button>
+        <div class="dropdown-content">
+          <a href="/blog" class="category-link">Any</a>
+          {{ range .Site.Taxonomies.categories }}
+          <a href="{{ .Page.Permalink }}" class="category-link">{{ .Page.Title }}</a>
+          {{ end }}
         </div>
-        <div class="tags-container space">
-          <h3 class="tags">Tags</h3>
-          <ul>
-            {{ range .Site.Taxonomies.tags }}
-              <li>
-                <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
-        </div>  */}}
-          {{/*  <h2>Need help with this?</h2>
-          <h3>Let us handle your needs</h3>
-        <div
-            class="calendly-inline-widget-aside"
-            data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694"
-            style="height:750px;"
-            ></div>
-          <script
-            type="text/javascript"
-            src="https://assets.calendly.com/assets/external/widget.js"
-            async
-          ></script>  */}}
-      </aside>
+      </div>
+    </div>
+    <div class="post-container">
+      {{ range .Pages }}
+      <div class="post">
+        <div class="post-content">
+          <div class="post-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </div>
+          <div class="post-info">
+            <p class="post-date">{{ .Date | dateFormat "Jan 2, 06" }}</p>
+            <p class="post-author">By {{ .Params.Author }}</p>
+            <p class="post-topic">{{ .Params.Topic }}</p>
+            <p class="post-time">{{ .Params.Time }}</p>
+          </div>
+          <div class="post-description"><i>{{ .Params.Description }}</i></div>
+        </div>
+        {{ $url := .Params.Url }}
+        {{ $imageName := index (split $url "/blog/") 1 }}
+        {{ $imagePattern := printf "img/banners/%s_banner.jpg" $imageName }}
+        {{ $resource := resources.Get $imagePattern }}
+        {{ if $resource }}
+        {{ $imageURL := $resource.Permalink }}
+        <div class="post-image">
+          <img src="{{ $imageURL}}">
+        </div>
+        {{ else }}
+        {{ $imageURL := (resources.Get "img/favicon-16x16.png").Permalink }}
+        <div class="post-image">
+          <img src="{{ $imageURL}}">
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </main>
 
+  <aside class="sidebar push">
+    <div class="centered-element">
+      <div class="calendly-inline-widget fixed"
+        data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694">
+        <h2>Need help with this?</h2>
+        <h3>Let us handle your needs</h3>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </aside>
 </div>
 {{ end }}

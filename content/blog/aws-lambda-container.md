@@ -6,6 +6,10 @@ topic: "Provisioning"
 date: "2023-07-01T15:30:00-07:00"
 author: "Fernando Reyes"
 time: "2 min read"
+categories: 
+ - Provisioning
+ - Aws
+ - Serverless
 description: "Simplify the deployment of Docker containers as Lambda functions on AWS using Terraform. This code snippet leverages the benefits of serverless architecture and containers to create a Lambda function module that effortlessly deploys a container image."
 url: "/blog/aws-lambda-container"
 ---

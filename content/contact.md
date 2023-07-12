@@ -64,12 +64,12 @@ input[type=text], input[type=email], #message{
   <div class="form-personal-data">
     <div class="form-personal-data-vertical">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="your name">
+      <input type="text" id="name" name="name" placeholder="Your name">
     </div>
 
     <div class="form-personal-data-vertical">
       <label for="name">Email</label>
-      <input type="email" id="email" name="email" placeholder="your email">
+      <input type="email" id="email" name="email" placeholder="Your email">
     </div>
   </div>
 

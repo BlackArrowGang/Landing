@@ -1,72 +1,57 @@
 {{ define "main" }} {{ if eq .Params.type "post" }}
-<link rel="stylesheet" href='{{ (resources.Get "./css/github-markdown.css").Permalink }}'>
+<link
+  rel="stylesheet"
+  href='{{ (resources.Get "./css/github-markdown.css").Permalink }}'
+/>
 <style>
-	.markdown-body {
-		box-sizing: border-box;
-		margin: 0 auto;
+  .markdown-body {
+    box-sizing: border-box;
+    margin: 0 auto;
     min-width: 200px;
-		max-width: 980px;
-		padding: 45px;
-    background-color: #1B1C1D;
-	}
-
-	@media (max-width: 767px) {
-		.markdown-body {
-			padding: 15px;
-		}
-	}
+    max-width: 980px;
+    padding: 45px;
+    background-color: #1b1c1d;
+  }
+  @media (max-width: 767px) {
+    .markdown-body {
+      padding: 15px;
+    }
+  }
   ul {
     list-style: none; /* Remove bullet points */
     padding: 10 0 0 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
   }
-
   .space {
     padding: inherit;
   }
 </style>
 <div class="container">
   <main>
-    <a href="/">Go back</a>
-    <div class="markdown-body">{{ .Content }}</div>
-  </main>
-  <aside>
-    <div class="push">
-
-
-      {{/*  <div class="categories-container space">
-        <h3 class="categories">Categories</h3>
+    {{ $permalinkPart := index (split .Permalink "/blog/") 1 }} {{ $modifiedPart
+    := replace (replace $permalinkPart "-" " ") "/" "" }}
+    <div class="markdown-body">
+      <div class="route-navigation">
         <ul>
-          {{ range .Site.Taxonomies.categories }}
-            <li>
-              <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-            </li>
-          {{ end }}
+          <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+          <li><span>&gt;</span></li>
+          <li><a href="{{ .Site.BaseURL }}/blog">Blog</a></li>
+          <li><span>&gt;</span></li>
+          <li><span class="markdown-body-color">{{ $modifiedPart }}</span></li>
         </ul>
       </div>
-      <div class="tags-container space">
-        <h3 class="tags">Tags</h3>
-        <ul>
-          {{ range .Site.Taxonomies.tags }}
-            <li>
-              <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-            </li>
-          {{ end }}
-        </ul>
-      </div>  */}}
-      <div
-      class="calendly-inline-widget"
-      data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694"
-      >
-      <h2>Need help with this?</h2>
-      <h3>Let us handle your needs</h3>
+      {{ .Content }}
     </div>
-        <script
-          type="text/javascript"
-          src="https://assets.calendly.com/assets/external/widget.js"
-          async
-        ></script>
+  </main>
+  <aside class="sidebar push">
+    <div class="centered-element">
+      <div class="calendly-inline-widget fixed"
+        data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694">
+        <h2>Need help with this?</h2>
+        <h3>Let us handle your needs</h3>
+      </div>
     </div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </aside>
 </div>
 {{ else }}
