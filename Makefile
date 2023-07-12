@@ -13,3 +13,6 @@ update_sub:
 	rm -rf .git/modules/ArsenalContent
 	git rm -f ./ArsenalContent
 	git submodule add https://github.com/BlackArrowGang/Arsenal.git ArsenalContent 
+
+extract_images:
+	python3 scripts/extract_images_service.py

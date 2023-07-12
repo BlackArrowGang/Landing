@@ -712,12 +712,11 @@ aside {
   padding: 20px;
   text-align: center;
   border-bottom: 2px solid var(--black);  
-}
-
-
+ }
+ 
 aside .fixed {
   position: -webkit-sticky;
-  position: sticky !important;
+  position: fixed !important;
   top: 100;
 }
 
@@ -733,16 +732,12 @@ aside .calendly-inline-widget {
 /* /// Route Navigation Post /// */
 
 .route-navigation {
-  margin-left: auto;
-  margin-right: 70%;
-  padding-top: 30px;
-  display: inline;
+
 }
 
 .route-navigation ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  padding-left: 0rem !important;
 }
 
 .route-navigation li {

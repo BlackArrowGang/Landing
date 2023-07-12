@@ -9,7 +9,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin-bottom: 20px;
     padding: 1.5rem;
   }
@@ -70,7 +69,7 @@
     text-overflow: ellipsis;
     margin-bottom: 20px;
   }
-  
+
   .post-description i {
     display: inline;
     overflow: hidden;
@@ -137,10 +136,78 @@
     color: #333;
     font-size: 14px;
   }
+
+
+
+  /* Style The Dropdown Button */
+.dropbtn {
+  width: 100%;
+  background-color: #232425;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  width: 20%;
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #232425;
+}
+
+.Categories-container {
+  display: flex;
+  padding-left: 30px;
+}
 </style>
 
 <div class="container">
   <main class="post-container">
+    <div class="Categories-container">
+      <div class="dropdown">
+      <button class="dropbtn">Categories</button>
+      <div class="dropdown-content">
+        <a href="/blog" class="category-link">Any</a>
+        {{ range .Site.Taxonomies.categories }}
+        <a href="{{ .Page.Permalink }}" class="category-link">{{ .Page.Title }}</a>
+      {{ end }}
+      </div>
+    </div>
+    </div>
     <div class="post-container">
       {{ range .Pages }}
       <div class="post">
@@ -156,8 +223,17 @@
           </div>
           <div class="post-description"><i>{{ .Params.Description }}</i></div>
         </div>
+        {{ $url :=  .Params.Url }}
+        {{ $imageName := index (split $url "/blog/") 1 }}
+        {{/*  {{ $imagePattern := printf "%s.jpg" $imageName }}  */}}
+        {{ $imagePattern := printf "img/banners/%s.jpg" $imageName }}
+        {{ $imageResource := .Resources.GetMatch $imagePattern }}
+        
         <div class="post-image">
-          <img src="{{ .Params.banner_url}}" alt="Small Picture" />
+          <p> {{ $imagePattern}}</p>
+          {{ with .Resources.GetMatch $imagePattern }}
+          <img src="{{ .RelPermalink }}" alt="{{ .Params.banner_alt }}" />
+          {{ end }}
         </div>
       </div>
       {{ end }}
@@ -165,31 +241,12 @@
   </main>
 
   <aside class="sidebar push">
-    <div
-      class="calendly-inline-widget-fixed"
-      data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694"
-      >
+    <div class="calendly-inline-widget fixed"
+      data-url="https://calendly.com/d/z7q-zjf-v2r/initial-consultation-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=232425&text_color=eaeaea&primary_color=8fd694">
       <h2>Need help with this?</h2>
       <h3>Let us handle your needs</h3>
     </div>
-        <script
-          type="text/javascript"
-          src="https://assets.calendly.com/assets/external/widget.js"
-          async
-        ></script>
-    </div>
-    <div class="category-container">
-      <h2 class="category-title">Categories</h2>
-      <ul class="category-list">
-        {{ range .Site.Taxonomies.categories }}
-        <li class="category-item">
-          <a href="{{ .Page.Permalink }}" class="category-link"
-            >{{ .Page.Title }}</a
-          >
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-  </aside>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</aside>
 </div>
 {{ end }}
