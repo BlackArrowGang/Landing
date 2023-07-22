@@ -678,6 +678,17 @@ footer .icons img {
     font-size: 24px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
   }
+
+  /* ///// footer styles ///// */
+  footer{
+    position: relative;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  footer p{
+    font-size: .8rem;
+  }
 }
 
 /* //////////////// Post list //////////////// */
