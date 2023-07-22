@@ -32,30 +32,6 @@
   background-color: transparent;
 }
 
-/* //////////////// Typography //////////////// */
-
-.main-title {
-  display: flex;
-  flex-direction: column;
-  font-size: 2.5rem;
-  margin-top: 5px;
-  font-weight: 600;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.title-keyword {
-  width: 180px;
-  text-align: center;
-}
-
-/* TODO: Ajustar el tamano para evitar movimiento de h1 */
-/* .title-keyword {
-    font-size: 1.5rem; 
-    vertical-align: middle;
-  } */
-
 html {
   scroll-behavior: smooth;
 }
@@ -312,8 +288,21 @@ main #background-video video {
       z-index: -2;
   } */
 
-main .title-keyword {
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main .services-section .main-title .dynamic-title{
+  display: flex;
+}
+
+main .services-section .main-title .title-keyword {
   color: var(--green);
+  width: 180px;
+  text-align: center;
 }
 
 main .main-container {
@@ -593,8 +582,14 @@ footer .icons img {
     font-size: 1.5rem;
   }
 
-  main .services-section h1 .dynamic-title{
+  main .services-section .main-title .dynamic-title{
     font-size: 1rem;
+  }
+
+  main .services-section .main-title .title-keyword {
+    color: var(--green);
+    width: 80px;
+    text-align: center;
   }
 
   main .services-section h2{
@@ -706,6 +701,12 @@ footer .icons img {
 
   footer p{
     font-size: .8rem;
+  }
+}
+
+@media (max-width: 415px) {
+  main .services-section h1{
+    font-size: 1.3rem;
   }
 }
 
