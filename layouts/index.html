@@ -46,11 +46,11 @@
           class="service-card {{ $hyphenatedt_topic }}"
           onclick="serviceLink(event)"
           style="background-image: url({{ .background_image_url }});">
-          <div>
+          <div class="card-part-one">
             <p class="service-title">{{ .title }}</p>
             <p class="service-topic">{{ .topic }}</p>
           </div>
-          <div>
+          <div class="card-part-two">
             <p class="service-price">{{ .price }}</p>
             <a href="{{ .link }}" target="_blank" class="service-link">Explore solution</a>
           </div>

@@ -620,6 +620,11 @@ footer .icons img {
     flex-direction: row;
   }
 
+  main .services-section .service-card .card-part-two{
+    min-width: 75px;
+    text-align: right;
+  }
+
   main .calendar-section {
     width: 100%;
     padding: 0.5rem;
