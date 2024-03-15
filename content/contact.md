@@ -76,6 +76,7 @@ input[type=text], input[type=email], #message{
   <label for="message">Message</label>
   <textarea id="message" name="message" placeholder="Write your message or something..." style="height:200px"></textarea>
   <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="box">
   <input type="hidden" name="_subject" value="New submission!">
   <input type="hidden" name="_next" value="{{< contactReturnUrl >}}">
   <input type="submit" value="Send">
