@@ -62,17 +62,17 @@ input[type=text], input[type=email], #message{
   <div class="form-personal-data">
     <div class="form-personal-data-vertical">
       <label for="name">Nombre</label>
-      <input type="text" id="name" name="name" placeholder="Ingresa tu nombre">
+      <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
     </div>
 
     <div class="form-personal-data-vertical">
       <label for="name">Correo Electrónico</label>
-      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico">
+      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
     </div>
   </div>
 
   <label for="message">Mensaje</label>
-  <textarea id="message" name="message" placeholder="Escribe tu mensaje..." style="height:200px"></textarea>
+  <textarea id="message" name="message" placeholder="Escribe tu mensaje..." style="height:200px" required></textarea>
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="box">
   <input type="hidden" name="_subject" value="New submission!">
